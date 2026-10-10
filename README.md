@@ -2,6 +2,10 @@
 
 **SectorZero-ARM**: A bare-metal ARM (AArch64) bootloader and freestanding 64-bit C kernel implementation built from scratch without external libraries or standard runtimes.
 
+![SectorZero-ARM boost-screen](images/RPi3.jpg)
+
+![SectorZero-ARM boost-screen](images/boostcreen.jpg)
+
 ---
 
 `ARM` processors / System-on-Chips boot differently than f.ex. `x86`/`x86_64`.
