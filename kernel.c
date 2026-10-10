@@ -16,9 +16,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-// Use 0x3F000000 for Raspberry Pi 3
-// Use 0xFE000000 for Raspberry Pi 4
-#define PERIPHERAL_BASE 0xFE000000 
+// QEMU 'virt' machine PL011 UART Data Register
+volatile unsigned int * const UART0_DR = (unsigned int *)0x09000000;
 
 // PL011 UART Data Register
 #define UART0_DR ((volatile unsigned int *)(PERIPHERAL_BASE + 0x201000))
