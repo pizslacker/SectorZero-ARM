@@ -11,12 +11,12 @@ LDFLAGS = -T linker.ld -nostdlib
 # Project files
 OBJS    = boot.o kernel.o
 ELF     = SectorZero.elf
-BIN     = SectorZero.bin
+IMG     = kernel8.img
 
 # Default target
 .PHONY: all clean run
 
-all: $(BIN)
+all: $(IMG)
 
 # Pattern rules for compiling C and Assembly
 %.o: %.S
@@ -30,14 +30,14 @@ $(ELF): $(OBJS)
 	# boot.o is listed first in $(OBJS) to ensure it is placed correctly
 	$(LD) $(LDFLAGS) $(OBJS) -o $@
 
-# Extract the raw binary payload
-$(BIN): $(ELF)
-	$(OBJCOPY) -O binary $< $@
+# Extract the raw IMGary payload
+$(IMG): $(ELF)
+	$(OBJCOPY) -O IMGary $< $@
 
 # Launch the QEMU emulator
-run: $(BIN)
-	qemu-system-aarch64 -machine virt -cpu cortex-a53 -nographic -kernel $(BIN)
+run: $(IMG)
+	qemu-system-aarch64 -machine virt -cpu cortex-a53 -nographic -kernel $(IMG)
 
 # Clean build artifacts
 clean:
-	rm -f $(OBJS) $(ELF) $(BIN)
+	rm -f $(OBJS) $(ELF) $(IMG)
