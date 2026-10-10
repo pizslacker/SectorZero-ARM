@@ -143,7 +143,7 @@ void kmain(void) {
         print_uart0("GPU Mailbox success! Drawing to HDMI...\r\n");
 
         // 1. Clear the screen to a retro dark blue
-        unsigned int bg_color = 0xFF0000AA;
+        unsigned int bg_color = 0xFFAA0000; // Big-endian, reverse order.
         for(int y = 0; y < 768; y++) {
             for(int x = 0; x < 1024; x++) {
                 unsigned int *pixel = (unsigned int *)((unsigned char *)global_fb + (y * global_pitch) + (x * 4));
