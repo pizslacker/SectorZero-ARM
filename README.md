@@ -4,6 +4,10 @@
 
 Instead of navigating real-mode to long-mode transitions, SectorZero-ARM boots directly into a flat 64-bit address space (`AArch64`), giving you immediate access to modern C development and Memory-Mapped I/O (`MMIO`).
 
+Unlike the legacy x86 BIOS/UEFI standard we're used to, the `ARM` boot sequence is heavily tied to the specific `System-on-Chip` (`SoC`) hardware and the `ARM Trusted Firmware` (`ATF`) standard.
+
+Because `ARM` processors are used in everything from embedded microcontrollers to secure smartphones and servers, the boot process is highly staged to establish a "Chain of Trust" between secure and non-secure environments.
+
 ### Core Architecture & Capabilities
 - Multi-Core Boot Management: The boot.S assembly entry point detects the hardware topology using the mpidr_el1 register. It safely parks secondary CPU cores in a low-power wait-for-event (wfe) loop while configuring the stack pointer (sp) for the primary core to execute C code.
 
