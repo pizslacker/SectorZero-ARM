@@ -1,4 +1,4 @@
-# SectorZero-ARM (for RaspberryPi 3 silicon)
+# SectorZero-ARM (for Raspberry Pi 3 silicon)
 
 **SectorZero-ARM**: A bare-metal ARM (AArch64) bootloader and freestanding 64-bit C kernel implementation built from scratch without external libraries or standard runtimes.
 
