@@ -39,8 +39,8 @@ volatile unsigned int __attribute__((aligned(16))) mbox[36];
 unsigned int *global_fb = 0;
 int global_pitch = 0;
 
-// You must link or include a binary font array here.
-#include "font8x16.h"
+// Include the 8x8 font array directly
+#include "font8x8_basic.h"
 
 // ==========================================
 // Serial Output
@@ -71,15 +71,25 @@ int mailbox_call(unsigned char channel) {
 // ==========================================
 // HDMI Text Rendering
 // ==========================================
+// Each individual character draw
 void draw_char(unsigned char c, int x, int y, unsigned int fg_color, unsigned int bg_color) {
     if (!global_fb) return;
     
-    // ADD 'const' HERE:
-    const unsigned char *glyph = &font8x16[c * 16];
+    // The basic font only contains standard ASCII (0 to 127).
+    // Prevent out-of-bounds array reads for extended characters.
+    if (c > 127) c = '?'; 
     
-    for (int row = 0; row < 16; row++) {
+    // Grab the 8-byte array for this specific character
+    const char *glyph = font8x8_basic[c];
+    
+    // 8x8 font means 8 rows tall
+    for (int row = 0; row < 8; row++) {
+        // 8 columns wide
         for (int col = 0; col < 8; col++) {
-            int is_pixel_set = glyph[row] & (1 << (7 - col));
+            
+            // The dhepper font reads bits from right to left (1 << col)
+            int is_pixel_set = glyph[row] & (1 << col);
+            
             unsigned int *pixel_addr = (unsigned int *)((unsigned char *)global_fb 
                                        + ((y + row) * global_pitch) 
                                        + ((x + col) * 4));
@@ -88,7 +98,7 @@ void draw_char(unsigned char c, int x, int y, unsigned int fg_color, unsigned in
         }
     }
 }
-
+// Drawing a character string
 void draw_string(const char *s, int x, int y, unsigned int fg_color, unsigned int bg_color) {
     int current_x = x;
     int current_y = y;
