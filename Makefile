@@ -11,7 +11,7 @@ LDFLAGS = -T linker.ld -nostdlib
 # Project files
 OBJS    = boot.o kernel.o
 ELF     = SectorZero.elf
-BIN     = kernel8.img
+BIN     = SectorZero.bin
 
 # Default target
 .PHONY: all clean run
