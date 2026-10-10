@@ -54,3 +54,5 @@ Remove the compiled object files and binaries:
 ```bash
 make clean
 ```
+
+Copyright (C) k!M/pizslacker 2026
