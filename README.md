@@ -10,17 +10,17 @@ Because `ARM` processors are used in everything from embedded microcontrollers t
 
 1. BL1: Boot ROM (The Immutable Root)
 
-  - Execution Level: EL3 (Highest Security)
+    - Execution Level: EL3 (Highest Security)
 
-  - On Power-On Reset (POR), the CPU wakes up and begins executing code physically baked into the silicon (the Boot ROM).
+    - On Power-On Reset (POR), the CPU wakes up and begins executing code physically baked into the silicon (the Boot ROM).
 
-  - Purpose: It initializes minimal hardware (just enough CPU cache to act as temporary RAM), verifies the cryptographic signature of the next stage, and loads BL2 from flash memory or eMMC into the SRAM.
+    - Purpose: It initializes minimal hardware (just enough CPU cache to act as temporary RAM), verifies the cryptographic signature of the next stage, and loads BL2 from flash memory or eMMC into the SRAM.
 
 2. BL2: Trusted Boot Firmware
 
-  - Execution Level: Secure EL1
+    - Execution Level: Secure EL1
 
-  - Purpose: BL2 initializes the main external DRAM. Because it runs in the secure world, it is responsible for loading the remaining firmware components into memory, verifying their signatures, and setting up the translation tables. It then passes control to BL31.
+    - Purpose: BL2 initializes the main external DRAM. Because it runs in the secure world, it is responsible for loading the remaining firmware components into memory, verifying their signatures, and setting up the translation tables. It then passes control to BL31.
 
 ### Why It Matters for Bare Metal
 When you boot your `SectorZero.bin` on a Raspberry Pi, you are essentially providing the `BL33` payload. The Broadcom GPU on the Pi acts as a `pseudo-BL1/BL2`, reading the SD card, initializing the RAM, and loading your code.
