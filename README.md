@@ -1,5 +1,7 @@
 # SectorZero-ARM
 
+**SectorZero** project from `x86_64` to `ARM` (`aarch64`)
+
 ## Requirements:
 ```bash
 sudo apt-get install gcc-aarch64-linux-gnu
