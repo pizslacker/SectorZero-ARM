@@ -30,9 +30,9 @@ $(ELF): $(OBJS)
 	# boot.o is listed first in $(OBJS) to ensure it is placed correctly
 	$(LD) $(LDFLAGS) $(OBJS) -o $@
 
-# Extract the raw IMGary payload
+# Extract the raw binary payload
 $(IMG): $(ELF)
-	$(OBJCOPY) -O IMGary $< $@
+	$(OBJCOPY) -O binary $< $@
 
 # Launch the QEMU emulator
 run: $(IMG)
