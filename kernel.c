@@ -111,14 +111,11 @@ void draw_char(unsigned char c, int x, int y, unsigned int fg_color, unsigned in
     for (int row = 0; row < 8; row++) {
         // 8 columns wide
         for (int col = 0; col < 8; col++) {
-            
             // The dhepper font reads bits from right to left (1 << col)
             int is_pixel_set = glyph[row] & (1 << col);
-            
             unsigned int *pixel_addr = (unsigned int *)((unsigned char *)global_fb 
                                        + ((y + row) * global_pitch) 
                                        + ((x + col) * 4));
-            
             *pixel_addr = is_pixel_set ? fg_color : bg_color;
         }
     }
