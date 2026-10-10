@@ -1,4 +1,4 @@
-# SectorZero-ARM
+# SectorZero-ARM (`RPi4` version)
 
 **SectorZero-ARM**: A bare-metal ARM (AArch64) bootloader and freestanding 64-bit C kernel implementation built from scratch without external libraries or standard runtimes.
 
@@ -45,7 +45,7 @@ Because `ARM` processors are used in everything from embedded microcontrollers t
     - Purpose: This is the traditional bootloader in the "Normal World." Common examples include U-Boot, EDK2 (UEFI), or even a custom bare-metal payload like your SectorZero-ARM. BL33 configures the hardware for the non-secure OS, loads the Linux kernel (and Device Tree), and jumps to it.
 
 ### Why It Matters for Bare Metal
-When you boot your `SectorZero.bin` on a Raspberry Pi, you are essentially providing the `BL33` payload. The Broadcom GPU on the Pi acts as a `pseudo-BL1/BL2`, reading the SD card, initializing the RAM, and loading your code.
+When you boot your `kernel8.img` on a Raspberry Pi, you are essentially providing the `BL33` payload. The Broadcom GPU on the Pi acts as a `pseudo-BL1/BL2`, reading the SD card, initializing the RAM, and loading your code.
 
 By the time your `boot.S` assembly executes, the processor has already transitioned out of `EL3`, parked the `TrustZone` environment, and dropped your code into the non-secure world to take over.
 
