@@ -71,7 +71,7 @@ Run:
 make
 ```
 
-This will build the binary Raspberry Pi 4 `kernel8.img` needed to boot.
+This will build the binary Raspberry Pi 3 `kernel8.img` needed to boot.
 
 ### Pi 3 - SD Card Reminder
 Ensure your SD card has the Pi specific config file + kernel image on the FAT32 root:
