@@ -6,6 +6,8 @@
 
 This shows a successful boot into **SectorZero-ARM** (on `RPi3b+`).
 
+![SectorZero-ARM boost-screen](images/bootscreen.jpg)
+
 The serial UART output should look like this:
 ```
 SectorZero-ARM: Booting on Raspberry Pi 3 Silicon!
