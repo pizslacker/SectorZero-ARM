@@ -2,9 +2,13 @@
 
 **SectorZero** project from `x86_64` to `ARM` (`AArch64`).
 
+ARM processors / SoCs boot differently than f.ex. `x86`/`x86_64`.
+
 Instead of navigating real-mode to long-mode transitions, SectorZero-ARM boots directly into a flat 64-bit address space (`AArch64`), giving you immediate access to modern C development and Memory-Mapped I/O (`MMIO`).
 
 Unlike the legacy x86 BIOS/UEFI standard we're used to, the `ARM` boot sequence is heavily tied to the specific `System-on-Chip` (`SoC`) hardware and the `ARM Trusted Firmware` (`ATF`) standard.
+
+Because ARM processors are used in everything from embedded microcontrollers to secure smartphones and servers, the boot process is highly staged to establish a "Chain of Trust" between secure and non-secure environments.
 
 Because `ARM` processors are used in everything from embedded microcontrollers to secure smartphones and servers, the boot process is highly staged to establish a "Chain of Trust" between secure and non-secure environments.
 
