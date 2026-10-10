@@ -40,7 +40,7 @@ By the time your `boot.S` assembly executes, the processor has already transitio
 
 ## Requirements:
 ```bash
-sudo apt-get install gcc-aarch64-linux-gnu qemu-system-arm
+sudo apt-get install build-essentials gcc-aarch64-linux-gnu qemu-system-arm
 ```
 
 To compile it and immediately launch the QEMU emulator:
