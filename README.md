@@ -6,6 +6,12 @@
 
 ![SectorZero-ARM boost-screen](images/bootscreen.jpg)
 
+The serial UART output should look like this:
+```
+SectorZero-ARM: Booting on Raspberry Pi 3 Silicon!
+Requesting Framebuffer from VideoCore GPU...
+GPU Mailbox success! Drawing to HDMI...
+```
 ---
 
 `ARM` processors / System-on-Chips boot differently than f.ex. `x86`/`x86_64`.
