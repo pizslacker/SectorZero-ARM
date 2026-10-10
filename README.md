@@ -22,6 +22,24 @@ Because `ARM` processors are used in everything from embedded microcontrollers t
 
     - Purpose: BL2 initializes the main external DRAM. Because it runs in the secure world, it is responsible for loading the remaining firmware components into memory, verifying their signatures, and setting up the translation tables. It then passes control to BL31.
 
+3. BL31: EL3 Runtime Firmware (Secure Monitor)
+
+    - Execution Level: EL3
+
+    - Purpose: This stage stays resident in memory even after the OS boots. It acts as the "Secure Monitor," handling power management (PSCI calls) and managing the context switches between the Secure World (TrustZone) and the Normal World.
+
+4. BL32: Secure-EL1 Payload (Optional)
+
+    - Execution Level: Secure EL1
+
+    - Purpose: If the system uses TrustZone, BL32 is the Secure OS (like OP-TEE). It handles cryptographic operations, DRM, or biometric data isolated from the main Linux kernel.
+
+5. BL33: Non-Trusted Firmware (The Handoff)
+
+    - Execution Level: EL2 (Hypervisor) or EL1 (OS Kernel)
+
+    - Purpose: This is the traditional bootloader in the "Normal World." Common examples include U-Boot, EDK2 (UEFI), or even a custom bare-metal payload like your SectorZero-ARM. BL33 configures the hardware for the non-secure OS, loads the Linux kernel (and Device Tree), and jumps to it.
+
 ### Why It Matters for Bare Metal
 When you boot your `SectorZero.bin` on a Raspberry Pi, you are essentially providing the `BL33` payload. The Broadcom GPU on the Pi acts as a `pseudo-BL1/BL2`, reading the SD card, initializing the RAM, and loading your code.
 
