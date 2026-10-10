@@ -1,4 +1,4 @@
-; SectorZero-64 - Bare-Metal x86_64 Bootloader & Minimal C Kernel
+; SectorZero-ARM - Bare-Metal ARM Bootloader & Minimal C Kernel
 ; Copyright (C) k!M/pizslacker 2026
 ;
 ; This program is free software: you can redistribute it and/or modify
