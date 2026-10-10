@@ -121,7 +121,7 @@ void draw_string(const char *s, int x, int y, unsigned int fg_color, unsigned in
 // Kernel Entry Point
 // ==========================================
 void kmain(void) {
-    print_uart0("SectorZero-ARM: Booting on Raspberry Pi 3!\r\n");
+    print_uart0("SectorZero-ARM: Booting on Raspberry Pi 3 Silicon!\r\n");
     print_uart0("Requesting Framebuffer from VideoCore GPU...\r\n");
 
     // Construct Mailbox payload for a 1024x768 32-bit ARGB framebuffer
