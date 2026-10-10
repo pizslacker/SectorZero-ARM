@@ -65,11 +65,19 @@ By the time your `boot.S` assembly executes, the processor has already transitio
 sudo apt-get install build-essentials gcc-aarch64-linux-gnu qemu-system-arm
 ```
 
-To compile it and immediately launch the QEMU emulator:
+## Howto Build:
+Run:
 ```bash
-make run
+make
 ```
-(Remember to use Ctrl+A, then X to exit QEMU).
+
+This will build the binary Raspberry Pi 4 `kernel8.img` needed to boot.
+
+### Pi 3 - SD Card Reminder
+Ensure your SD card has the Pi specific config file + kernel image on the FAT32 root:
+
+- `config.txt`
+- `kernel8.img`
 
 
 Remove the compiled object files and binaries:
