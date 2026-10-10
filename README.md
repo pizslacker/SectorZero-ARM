@@ -74,6 +74,12 @@ make
 This will build the binary Raspberry Pi 3 `kernel8.img` needed to boot.
 
 ### Pi 3 - SD Card Reminder
+Ensure your SD card has the Pi 3 specific firmware files on the FAT32 root:
+- `bootcode.bin`
+- `start.elf`
+- `fixup.dat`
+- `bcm2710-rpi-3-b-plus.dtb`
+- 
 Ensure your SD card has the Pi specific config file + kernel image on the FAT32 root:
 
 - `config.txt`
