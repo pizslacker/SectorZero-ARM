@@ -8,8 +8,6 @@ Instead of navigating real-mode to long-mode transitions, SectorZero-ARM boots d
 
 Unlike the legacy x86 BIOS/UEFI standard we're used to, the `ARM` boot sequence is heavily tied to the specific `System-on-Chip` (`SoC`) hardware and the `ARM Trusted Firmware` (`ATF`) standard.
 
-Because ARM processors are used in everything from embedded microcontrollers to secure smartphones and servers, the boot process is highly staged to establish a "Chain of Trust" between secure and non-secure environments.
-
 Because `ARM` processors are used in everything from embedded microcontrollers to secure smartphones and servers, the boot process is highly staged to establish a "Chain of Trust" between secure and non-secure environments.
 
 1. BL1: Boot ROM (The Immutable Root)
