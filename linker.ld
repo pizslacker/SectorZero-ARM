@@ -19,10 +19,9 @@
 ENTRY(_start)
 SECTIONS
 {
-    /* QEMU virt machine base RAM address */
-    . = 0x40000000;
+    /* Raspberry Pi 3 AArch64 load address */
+    . = 0x80000;
     
-    /* Ensure our boot assembly is at the very beginning of the binary */
     .text.boot : { *(.text.boot) }
     
     .text : { *(.text) }
