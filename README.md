@@ -1,8 +1,10 @@
 # SectorZero-ARM
 
-**SectorZero** project from `x86_64` to `ARM` (`AArch64`).
+**SectorZero-ARM**: A bare-metal ARM (AArch64) bootloader and freestanding 64-bit C kernel implementation built from scratch without external libraries or standard runtimes.
 
-ARM processors / SoCs boot differently than f.ex. `x86`/`x86_64`.
+---
+
+`ARM` processors / System-on-Chips boot differently than f.ex. `x86`/`x86_64`.
 
 Instead of navigating real-mode to long-mode transitions, SectorZero-ARM boots directly into a flat 64-bit address space (`AArch64`), giving you immediate access to modern C development and Memory-Mapped I/O (`MMIO`).
 
