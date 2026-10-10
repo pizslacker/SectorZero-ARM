@@ -79,7 +79,8 @@ Ensure your SD card has the Pi 3 specific firmware files on the FAT32 root:
 - `start.elf`
 - `fixup.dat`
 - `bcm2710-rpi-3-b-plus.dtb`
-(These can be found [here](https://github.com/raspberrypi/firmware/tree/master/boot).
+
+(These firmware files can be found [here](https://github.com/raspberrypi/firmware/tree/master/boot).
 
 Also ensure your SD card has the Pi specific config file + kernel image on the FAT32 root:
 - `config.txt`
