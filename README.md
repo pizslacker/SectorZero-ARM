@@ -4,7 +4,7 @@
 
 ![SectorZero-ARM boost-screen](images/RPi3.jpg)
 
-This shows a successful boot into **SectorZero-ARM** (on `RPi3b+`).
+This shows a successful boot into **SectorZero-ARM** (on `RPi3 B`).
 
 ![SectorZero-ARM boost-screen](images/bootscreen.jpg)
 
