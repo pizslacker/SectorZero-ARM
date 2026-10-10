@@ -16,9 +16,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-// ==========================================
-// SectorZero-ARM: Raspberry Pi 3 (BCM2837B0)
-// ==========================================
+// ===============================
+// SectorZero-ARM: Raspberry Pi 3
+// ===============================
 
 // Peripheral Base Address for Raspberry Pi 3
 #define PERIPHERAL_BASE 0x3F000000 
