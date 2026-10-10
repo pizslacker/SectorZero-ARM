@@ -31,7 +31,7 @@ void print_uart0(const char *s) {
 }
 
 void kmain(void) {
-    print_uart0("SectorZero-ARM: Hello from real Raspberry Pi 3 Silicon!\r\n");
+    print_uart0("SectorZero-ARM: Hello from real Raspberry Pi 4 Silicon!\r\n");
     
     while(1) {
         // Halt loop
