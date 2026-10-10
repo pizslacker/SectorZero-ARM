@@ -75,11 +75,13 @@ This will build the binary Raspberry Pi 4 `kernel8.img` needed to boot.
 
 ### Pi 4 SD Card Reminder
 Ensure your SD card has the Pi 4 specific firmware files on the FAT32 root:
-
 - `bootcode.bin`
 - `start4.elf`
 - `fixup4.dat`
 - `bcm2711-rpi-4-b.dtb`
+Also ensure your SD card has the Pi specific config file + kernel image on the FAT32 root:
+- `config.txt`
+- `kernel8.img`
 
 Remove the compiled object files and binaries:
 ```bash
