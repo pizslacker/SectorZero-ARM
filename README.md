@@ -8,6 +8,11 @@ Unlike the legacy x86 BIOS/UEFI standard we're used to, the `ARM` boot sequence 
 
 Because `ARM` processors are used in everything from embedded microcontrollers to secure smartphones and servers, the boot process is highly staged to establish a "Chain of Trust" between secure and non-secure environments.
 
+### Why It Matters for Bare Metal
+When you boot your `SectorZero.bin` on a Raspberry Pi, you are essentially providing the `BL33` payload. The Broadcom GPU on the Pi acts as a `pseudo-BL1/BL2`, reading the SD card, initializing the RAM, and loading your code.
+
+By the time your `boot.S` assembly executes, the processor has already transitioned out of `EL3`, parked the `TrustZone` environment, and dropped your code into the non-secure world to take over.
+
 ### Core Architecture & Capabilities
 - Multi-Core Boot Management: The boot.S assembly entry point detects the hardware topology using the mpidr_el1 register. It safely parks secondary CPU cores in a low-power wait-for-event (wfe) loop while configuring the stack pointer (sp) for the primary core to execute C code.
 
