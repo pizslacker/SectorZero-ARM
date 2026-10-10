@@ -1,4 +1,4 @@
-# SectorZero-ARM (for RPi4)
+# SectorZero-ARM (`RPi4` version)
 
 **SectorZero-ARM**: A bare-metal ARM (AArch64) bootloader and freestanding 64-bit C kernel implementation built from scratch without external libraries or standard runtimes.
 
