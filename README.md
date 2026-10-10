@@ -4,7 +4,7 @@
 
 ![SectorZero-ARM boost-screen](images/RPi3.jpg)
 
-![SectorZero-ARM boost-screen](images/boostcreen.jpg)
+![SectorZero-ARM boost-screen](images/bootscreen.jpg)
 
 ---
 
