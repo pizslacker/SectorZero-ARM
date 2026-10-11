@@ -23,10 +23,10 @@
 // Peripheral Base Address for Raspberry Pi 4
 #define PERIPHERAL_BASE 0xFE000000 
 
-// 1. PL011 UART MMIO
+// PL011 UART MMIO
 #define UART0_DR ((volatile unsigned int *)(PERIPHERAL_BASE + 0x201000))
 
-// 2. Mailbox MMIO
+// Mailbox MMIO
 #define MBOX_BASE   (PERIPHERAL_BASE + 0xB880)
 #define MBOX_READ   ((volatile unsigned int *)(MBOX_BASE + 0x00))
 #define MBOX_STATUS ((volatile unsigned int *)(MBOX_BASE + 0x18))
@@ -34,15 +34,15 @@
 #define MBOX_FULL   0x80000000
 #define MBOX_EMPTY  0x40000000
 
-// 3. Global State
+// Global State
 volatile unsigned int __attribute__((aligned(16))) mbox[36];
 unsigned int *global_fb = 0;
 int global_pitch = 0;
 
-// 4. Include the 8x8 font array directly
+// Include the 8x8 font array directly
 #include "font8x8_basic.h"
 
-// 5. Converts an unsigned integer to a decimal string
+// Converts an unsigned integer to a decimal string
 void int_to_string(unsigned int val, char *buffer) {
     if (val == 0) {
         buffer[0] = '0'; 
@@ -224,7 +224,7 @@ void kmain(void) {
         
         print_uart0("GPU Mailbox success! Drawing to HDMI...\r\n");
 
-        // 1. Clear the screen to a retro dark blue
+        // Clear the screen to a retro dark blue
         unsigned int bg_color = 0xFF0000AA;
         for(int y = 0; y < 768; y++) {
             for(int x = 0; x < 1024; x++) {
@@ -233,7 +233,7 @@ void kmain(void) {
             }
         }
 
-        // 2. Draw our boot text
+        // Draw our boot text
         unsigned int white = 0xFFFFFFFF;
         
         draw_string("SectorZero-ARM (AArch64)", 16, 16, white, bg_color);
