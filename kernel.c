@@ -198,10 +198,10 @@ void kmain(void) {
         unsigned int type = (rev >> 4) & 0xFF;
         switch(type) {
             case 0x11: 
-                board_str = "Raspberry Pi 4 Model B";
+                board_str = "Raspberry Pi 4 Model B (BCM2711)";
                 break;
             case 0x14:
-                board_str = "Raspberry Pi 400";
+                board_str = "Raspberry Pi 400 (BCM2711)";
                 break;
         }
     }
@@ -244,7 +244,7 @@ void kmain(void) {
         // Print the unit suffix
         int offset = 0;
         while(mem_str[offset] != '\0') offset++; // Find length of the number
-        draw_string(" MB (LPDDR2)", 16 + (18 * 8) + (offset * 8), 40, white, bg_color);
+        draw_string(" MB (LPDDR4)", 16 + (18 * 8) + (offset * 8), 40, white, bg_color);
         draw_string("Video: 1024x768x32 ARGB Framebuffer OK", 16, 48, white, bg_color);
         
         draw_string(">_", 16, 74, white, bg_color);
