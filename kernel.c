@@ -19,9 +19,6 @@
 // QEMU 'virt' machine PL011 UART Data Register
 volatile unsigned int * const UART0_DR = (unsigned int *)0x09000000;
 
-// PL011 UART Data Register
-#define UART0_DR ((volatile unsigned int *)(PERIPHERAL_BASE + 0x201000))
-
 void print_uart0(const char *s) {
     while(*s != '\0') {
         *UART0_DR = (unsigned int)(*s);
@@ -30,7 +27,7 @@ void print_uart0(const char *s) {
 }
 
 void kmain(void) {
-    print_uart0("SectorZero-ARM: Hello from real Raspberry Pi 3 Silicon!\r\n");
+    print_uart0("SectorZero-ARM: Hello from emulated ARM/CortexA53 Silicon!\r\n");
     
     while(1) {
         // Halt loop
